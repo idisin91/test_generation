@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+}
+
+.products li,
+.cart li {
+    list-style: none;
+    margin-bottom: 1rem;
+}
