@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Корзина</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Корзина</h1>
+  {% if items %}
+  <ul class="cart">
+    {% for item in items %}
+    <li>{{ item.product.name }} x {{ item.quantity }} = {{ item.subtotal }}$</li>
+    {% endfor %}
+  </ul>
+  <p>Итого: {{ total }}$</p>
+  {% else %}
+  <p>Корзина пуста.</p>
+  {% endif %}
+  <p><a href="{{ url_for('index') }}">Продолжить покупки</a></p>
+</body>
+</html>
